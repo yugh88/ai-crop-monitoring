@@ -67,7 +67,7 @@ print(f"🌐 YOUR APP IS LIVE: {public_url}")
 **Perfect for:** Production use, permanent links, portfolio showcase
 
 #### **Live Production App:**
-**🚀 [Try the Live App Here →](https://ai-crop-monitoring-system.streamlit.app)**
+**🚀 [Try the Live App Here →]([https://ai-crop-monitoring-system.streamlit.app](https://ai-crop-monitoring-myyhjqphyofxk8gw4gkm7r.streamlit.app/))**
 
 #### **Deploy Your Own:**
 
@@ -172,15 +172,15 @@ Then open: http://localhost:8501
 ## 📱 Screenshots & Demo
 
 ### **Dashboard Overview**
-![Dashboard](assets/dashboard_overview.png)
+![Dashboard](assets/demo_images.jpeg)
 *Real-time metrics, NDVI maps, and alert system*
 
 ### **AI Analysis Interface**
-![AI Analysis](assets/ai_analysis.png)
+![AI Analysis](assets/demo_images2.jpeg)
 *Upload crop images for instant health assessment*
 
 ### **Mobile Responsive Design**
-![Mobile](assets/mobile_view.png)
+![Mobile](assets/demo_images3.jpeg)
 *Optimized for smartphone use in fields*
 
 ---

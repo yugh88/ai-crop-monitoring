@@ -17,50 +17,205 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for professional styling
+# Enhanced Custom CSS for professional styling
 st.markdown("""
 <style>
+    /* Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    /* Global Styles */
+    .stApp {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #2c3e50;
+    }
+    
+    /* Main container background */
+    .main .block-container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 2rem;
+        margin-top: 2rem;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        backdrop-filter: blur(10px);
+    }
+    
+    /* Header styling */
     .main-header {
-        font-size: 3rem;
+        font-size: 3.5rem;
+        font-weight: 700;
         color: #2E8B57;
         text-align: center;
-        margin-bottom: 2rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        background: linear-gradient(45deg, #2E8B57, #32CD32);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
+    
+    .sub-header {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 3rem;
+        font-weight: 500;
+    }
+    
+    /* Metric cards */
     .metric-card {
-        background: linear-gradient(135deg, #f0f8f0 0%, #e8f5e8 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         padding: 1.5rem;
         border-radius: 15px;
-        border-left: 5px solid #2E8B57;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border: 2px solid #e9ecef;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         margin-bottom: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-left: 5px solid #2E8B57;
     }
+    
+    .metric-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    
+    /* Alert styling */
     .alert-high { 
-        background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); 
-        border-left: 5px solid #f44336; 
-        padding: 1rem; 
-        border-radius: 10px; 
-        margin: 0.5rem 0; 
+        background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%); 
+        border: 2px solid #fc8181;
+        border-left: 6px solid #e53e3e; 
+        padding: 1.2rem; 
+        border-radius: 12px; 
+        margin: 1rem 0;
+        box-shadow: 0 4px 15px rgba(229, 62, 62, 0.2);
     }
+    
     .alert-medium { 
-        background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); 
-        border-left: 5px solid #ff9800; 
-        padding: 1rem; 
-        border-radius: 10px; 
-        margin: 0.5rem 0; 
+        background: linear-gradient(135deg, #fffbf0 0%, #feebc8 100%); 
+        border: 2px solid #f6ad55;
+        border-left: 6px solid #ed8936; 
+        padding: 1.2rem; 
+        border-radius: 12px; 
+        margin: 1rem 0;
+        box-shadow: 0 4px 15px rgba(237, 137, 54, 0.2);
     }
+    
     .alert-low { 
-        background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); 
-        border-left: 5px solid #4caf50; 
-        padding: 1rem; 
-        border-radius: 10px; 
-        margin: 0.5rem 0; 
+        background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%); 
+        border: 2px solid #68d391;
+        border-left: 6px solid #38a169; 
+        padding: 1.2rem; 
+        border-radius: 12px; 
+        margin: 1rem 0;
+        box-shadow: 0 4px 15px rgba(56, 161, 105, 0.2);
     }
-    .stApp > header {
-        background-color: transparent;
+    
+    /* Sidebar styling */
+    .css-1d391kg {
+        background: linear-gradient(180deg, #2E8B57 0%, #228B22 100%);
     }
-    .stApp {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    
+    .css-1d391kg .css-1544g2n {
+        color: white;
+        font-weight: 600;
+    }
+    
+    /* Button styling */
+    .stButton > button {
+        background: linear-gradient(45deg, #2E8B57, #32CD32);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 0.6rem 2rem;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(46, 139, 87, 0.4);
+    }
+    
+    /* File uploader styling */
+    .stFileUploader > div {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border: 2px dashed #2E8B57;
+        border-radius: 15px;
+        padding: 2rem;
+    }
+    
+    /* Progress bar */
+    .stProgress .st-bo {
+        background: linear-gradient(45deg, #2E8B57, #32CD32);
+    }
+    
+    /* Metrics styling */
+    [data-testid="metric-container"] {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border: 2px solid #e9ecef;
+        border-left: 5px solid #2E8B57;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Success/Warning/Error messages */
+    .stAlert {
+        border-radius: 10px;
+        border-left-width: 5px;
+    }
+    
+    /* Expander styling */
+    .streamlit-expanderHeader {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 10px;
+        font-weight: 600;
+    }
+    
+    /* Chart container */
+    .plot-container {
+        background: white;
+        border-radius: 15px;
+        padding: 1rem;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        border: 2px solid #e9ecef;
+    }
+    
+    /* Section headers */
+    .section-header {
+        color: #2E8B57;
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin: 2rem 0 1rem 0;
+        border-bottom: 3px solid #2E8B57;
+        padding-bottom: 0.5rem;
+    }
+    
+    /* Footer styling */
+    .footer {
+        background: linear-gradient(135deg, #2E8B57 0%, #228B22 100%);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 15px;
+        margin-top: 3rem;
+    }
+    
+    /* Hide Streamlit default elements */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    
+    /* Sidebar content styling */
+    .css-1d391kg .stSelectbox label {
+        color: white !important;
+        font-weight: 600;
+    }
+    
+    .css-1d391kg .stMarkdown {
+        color: white;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -183,7 +338,7 @@ def analyze_crop_health(image, model):
 def main():
     # Header
     st.markdown('<h1 class="main-header">🌱 AI Crop Monitoring System</h1>', unsafe_allow_html=True)
-    st.markdown('<p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 2rem;">Empowering Indian Agriculture with Artificial Intelligence | Smart India Hackathon 2025</p>', unsafe_allow_html=True)
+    st.markdown('<p class="sub-header">Empowering Indian Agriculture with Artificial Intelligence | Smart India Hackathon 2025</p>', unsafe_allow_html=True)
 
     # Load AI model
     model = load_ai_model()
@@ -205,7 +360,7 @@ def main():
     st.sidebar.warning("⚠️ 3 Alerts Pending")
 
     # Main dashboard metrics
-    st.subheader("📈 Real-time Field Metrics")
+    st.markdown('<h2 class="section-header">📈 Real-time Field Metrics</h2>', unsafe_allow_html=True)
     
     col1, col2, col3, col4, col5 = st.columns(5)
     
@@ -239,38 +394,47 @@ def main():
     
     with col1:
         # NDVI Map
-        st.subheader("🗺️ NDVI Vegetation Health Map")
+        st.markdown('<h3 class="section-header">🗺️ NDVI Vegetation Health Map</h3>', unsafe_allow_html=True)
         
         # Generate realistic NDVI data
         np.random.seed(42)
         ndvi_data = np.random.rand(40, 60) * 0.8 + 0.1
         
+        # Create the plot with better styling
         fig, ax = plt.subplots(figsize=(12, 8))
+        fig.patch.set_facecolor('white')
+        
         im = ax.imshow(ndvi_data, cmap='RdYlGn', aspect='auto', vmin=0, vmax=1)
-        ax.set_title('Crop Health Distribution (NDVI Values)', fontsize=16, pad=20)
-        ax.set_xlabel('Field Width (meters)', fontsize=12)
-        ax.set_ylabel('Field Length (meters)', fontsize=12)
+        ax.set_title('Crop Health Distribution (NDVI Values)', fontsize=18, fontweight='bold', pad=20, color='#2E8B57')
+        ax.set_xlabel('Field Width (meters)', fontsize=14, fontweight='bold')
+        ax.set_ylabel('Field Length (meters)', fontsize=14, fontweight='bold')
         
         # Add colorbar with proper labeling
         cbar = plt.colorbar(im, ax=ax, shrink=0.8)
-        cbar.set_label('NDVI Value\n(0.0 = Unhealthy, 1.0 = Healthy)', rotation=270, labelpad=20)
+        cbar.set_label('NDVI Value\n(0.0 = Unhealthy, 1.0 = Healthy)', rotation=270, labelpad=25, fontsize=12, fontweight='bold')
         
         # Add grid for better readability
-        ax.grid(True, alpha=0.3, linestyle='--')
+        ax.grid(True, alpha=0.3, linestyle='--', color='white', linewidth=1)
         
-        # Add some sample field boundaries
-        ax.axhline(y=10, color='white', linewidth=2, alpha=0.7)
-        ax.axhline(y=20, color='white', linewidth=2, alpha=0.7)
-        ax.axhline(y=30, color='white', linewidth=2, alpha=0.7)
-        ax.axvline(x=15, color='white', linewidth=2, alpha=0.7)
-        ax.axvline(x=30, color='white', linewidth=2, alpha=0.7)
-        ax.axvline(x=45, color='white', linewidth=2, alpha=0.7)
+        # Add some sample field boundaries with better styling
+        boundary_lines = [10, 20, 30]
+        boundary_cols = [15, 30, 45]
         
+        for y in boundary_lines:
+            ax.axhline(y=y, color='white', linewidth=3, alpha=0.8)
+        for x in boundary_cols:
+            ax.axvline(x=x, color='white', linewidth=3, alpha=0.8)
+        
+        # Style the plot
+        ax.tick_params(colors='#333', labelsize=11)
+        
+        st.markdown('<div class="plot-container">', unsafe_allow_html=True)
         st.pyplot(fig)
+        st.markdown('</div>', unsafe_allow_html=True)
         
     with col2:
         # Alert system
-        st.subheader("⚠️ Active Alerts")
+        st.markdown('<h3 class="section-header">⚠️ Active Alerts</h3>', unsafe_allow_html=True)
         
         alerts = [
             {"level": "High", "field": "F007", "message": "Low soil moisture detected", "time": "2h ago", "action": "Increase irrigation"},
@@ -283,35 +447,35 @@ def main():
             if alert["level"] == "High":
                 st.markdown(f'''
                 <div class="alert-high">
-                    🚨 <strong>{alert["field"]}</strong><br>
-                    {alert["message"]}<br>
-                    <small>💡 {alert["action"]}</small><br>
-                    <small>⏰ {alert["time"]}</small>
+                    <strong>🚨 {alert["field"]}</strong><br>
+                    <span style="font-size: 1.1rem;">{alert["message"]}</span><br>
+                    <small style="color: #666;"><strong>💡 Action:</strong> {alert["action"]}</small><br>
+                    <small style="color: #999;">⏰ {alert["time"]}</small>
                 </div>
                 ''', unsafe_allow_html=True)
             elif alert["level"] == "Medium":
                 st.markdown(f'''
                 <div class="alert-medium">
-                    ⚠️ <strong>{alert["field"]}</strong><br>
-                    {alert["message"]}<br>
-                    <small>💡 {alert["action"]}</small><br>
-                    <small>⏰ {alert["time"]}</small>
+                    <strong>⚠️ {alert["field"]}</strong><br>
+                    <span style="font-size: 1.1rem;">{alert["message"]}</span><br>
+                    <small style="color: #666;"><strong>💡 Action:</strong> {alert["action"]}</small><br>
+                    <small style="color: #999;">⏰ {alert["time"]}</small>
                 </div>
                 ''', unsafe_allow_html=True)
             else:
                 st.markdown(f'''
                 <div class="alert-low">
-                    ✅ <strong>{alert["field"]}</strong><br>
-                    {alert["message"]}<br>
-                    <small>💡 {alert["action"]}</small><br>
-                    <small>⏰ {alert["time"]}</small>
+                    <strong>✅ {alert["field"]}</strong><br>
+                    <span style="font-size: 1.1rem;">{alert["message"]}</span><br>
+                    <small style="color: #666;"><strong>💡 Action:</strong> {alert["action"]}</small><br>
+                    <small style="color: #999;">⏰ {alert["time"]}</small>
                 </div>
                 ''', unsafe_allow_html=True)
 
     # AI Image Analysis Section
     st.markdown("---")
-    st.subheader("🧠 AI-Powered Crop Health Analysis")
-    st.markdown("Upload crop images for real-time AI health assessment and recommendations")
+    st.markdown('<h2 class="section-header">🧠 AI-Powered Crop Health Analysis</h2>', unsafe_allow_html=True)
+    st.markdown("**Upload crop images for real-time AI health assessment and recommendations**")
 
     uploaded_file = st.file_uploader(
         "Choose crop image", 
@@ -327,7 +491,7 @@ def main():
             image = Image.open(uploaded_file)
             st.image(image, caption="Uploaded Crop Image", use_column_width=True)
             
-            st.success(f"✅ Image uploaded successfully: {uploaded_file.name}")
+            st.success(f" Image uploaded successfully: {uploaded_file.name}")
             st.info(f"📏 Image size: {image.size[0]}x{image.size[1]} pixels")
             
             # Analysis button
@@ -429,23 +593,23 @@ def main():
             
         st.markdown("""
         **Supported Analysis Types:**
-        - ✅ Crop health assessment (Healthy/Stressed classification)
-        - ✅ Risk level evaluation (Low/Medium/High)
-        - ✅ Confidence scoring for predictions
-        - ✅ Actionable recommendations generation
-        - ✅ Historical trend analysis (planned)
-        - ✅ Multi-crop type support (planned)
+        -  Crop health assessment (Healthy/Stressed classification)
+        -  Risk level evaluation (Low/Medium/High)
+        -  Confidence scoring for predictions
+        -  Actionable recommendations generation
+        -  Historical trend analysis (planned)
+        -  Multi-crop type support (planned)
         """)
 
     # Footer
     st.markdown("---")
     st.markdown(f"""
-    <div style='text-align: center; color: #666; margin-top: 2rem;'>
-        <p><strong>🌱 AI Crop Monitoring System</strong></p>
-        <p>Built with ❤️ for Smart India Hackathon 2025</p>
-        <p><small>Last Updated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} | Model Version: 1.0 | Status: Production Ready</small></p>
-        <p><small>Developed by: [Your Team Name] | 
-        <a href="https://github.com/yourusername/ai-crop-monitoring" target="_blank">🔗 View Source Code</a></small></p>
+    <div class="footer">
+        <h3>🌱 AI Crop Monitoring System</h3>
+        <p>Built with ❤ for Smart India Hackathon 2025</p>
+        <p><strong>Last Updated:</strong> {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} | <strong>Model Version:</strong> 1.0 | <strong>Status:</strong> Production Ready</p>
+        <p>Developed by: [Your Team Name] | 
+        <a href="https://github.com/yourusername/ai-crop-monitoring" target="_blank" style="color: #90EE90;">🔗 View Source Code</a></p>
     </div>
     """, unsafe_allow_html=True)
 

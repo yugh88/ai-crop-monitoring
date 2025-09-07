@@ -224,13 +224,13 @@ st.markdown("""
 def load_ai_model():
     """Load the trained AI model"""
     try:
-        model_path = os.path.join('models', 'crop_health_model.pkl')
+        model_path = os.path.join('models', 'my_model.pkl')
         if os.path.exists(model_path):
             with open(model_path, 'rb') as f:
                 model = pickle.load(f)
             return model
         else:
-            st.warning("⚠️ Model file not found. Using demo mode.")
+            st.warning(" Model file not found. Using demo mode.")
             return None
     except Exception as e:
         st.error(f"Error loading model: {e}")
@@ -254,9 +254,9 @@ def extract_features_from_image(image):
         
         # RGB channel means
         features.extend([
-            np.mean(img_resized[:,:,0]),  # Red mean
-            np.mean(img_resized[:,:,1]),  # Green mean
-            np.mean(img_resized[:,:,2])   # Blue mean
+            np.mean(img_resized[:,:,0]),  
+            np.mean(img_resized[:,:,1]),  
+            np.mean(img_resized[:,:,2])   
         ])
         
         # Calculate vegetation indices
@@ -608,7 +608,7 @@ def main():
         <h3>🌱 AI Crop Monitoring System</h3>
         <p>Built with ❤ for Smart India Hackathon 2025</p>
         <p><strong>Last Updated:</strong> {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} | <strong>Model Version:</strong> 1.0 | <strong>Status:</strong> Production Ready</p>
-        <p>Developed by: [Your Team Name] | 
+        <p>Developed by: [Yugh Juneja] | 
         <a href="https://github.com/yourusername/ai-crop-monitoring" target="_blank" style="color: #90EE90;">🔗 View Source Code</a></p>
     </div>
     """, unsafe_allow_html=True)

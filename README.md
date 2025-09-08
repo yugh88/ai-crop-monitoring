@@ -233,6 +233,21 @@ graph TB
 - 🔄 Marketplace for agricultural inputs
 
 ---
+---
+
+## 👥 Team Details
+
+| Name            | Role                   |
+|-----------------|------------------------|
+| **Yugh Juneja** | Team Leader – AI/ML & Deployment |
+| Aditya Raj      | Backend                |
+| Rishaub Kumar   | Backend                |
+| Palak Narang    | Presentation           |
+| Nancy Sharma    | Frontend               |
+| Rohit Deka      | Frontend               |
+
+---
+
 
 ## 🤝 Contributing
 

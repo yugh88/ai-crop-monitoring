@@ -14,6 +14,21 @@ An AI-powered crop monitoring system that uses machine learning to analyze crop 
 **🎯 Impact**: Real-time crop health monitoring with 85%+ accuracy
 
 ---
+---
+
+## 👥 Team Details
+
+| Name            | Role                   |
+|-----------------|------------------------|
+| **Yugh Juneja** | Team Leader – AI/ML & Deployment |
+| Aditya Raj      | Backend                |
+| Rishaub Kumar   | Backend                |
+| Palak Narang    | Presentation           |
+| Nancy Sharma    | Frontend               |
+| Rohit Deka      | Frontend               |
+
+---
+
 
 ## 🚀 Quick Start Options
 
@@ -233,19 +248,6 @@ graph TB
 - 🔄 Marketplace for agricultural inputs
 
 ---
----
-
-## 👥 Team Details
-
-| Name            | Role                   |
-|-----------------|------------------------|
-| **Yugh Juneja** | Team Leader – AI/ML & Deployment |
-| Aditya Raj      | Backend                |
-| Rishaub Kumar   | Backend                |
-| Palak Narang    | Presentation           |
-| Nancy Sharma    | Frontend               |
-| Rohit Deka      | Frontend               |
-
 ---
 
 

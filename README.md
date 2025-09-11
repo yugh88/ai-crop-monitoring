@@ -4,6 +4,13 @@
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Hackathon](https://img.shields.io/badge/Built%20for-Smart%20India%20Hackathon%202025-orange.svg)](https://sih.gov.in)
+## 🌱 Problem Statement
+
+**ID:** 25099  
+**Title:** AI-powered monitoring of crop health, soil condition, and pest risks using multispectral/hyperspectral imaging and sensor data.  
+
+This problem statement focuses on leveraging AI and advanced imaging technologies to monitor crop health, analyze soil conditions, and predict pest risks. By integrating multispectral/hyperspectral data with sensor inputs, the goal is to provide actionable insights for precision agriculture, improving yield, sustainability, and early risk detection.
+
 
 ## 🎯 Overview
 
